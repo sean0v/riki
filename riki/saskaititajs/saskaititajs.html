@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="lv">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--meta name="keywords" content=""-->
+		<!--meta name="description" content=""-->
+		<title>Saskaitītājs</title>
+		<link rel="stylesheet" href="../css/style.css">
+		<script type="text/javascript" src="./main.js"></script>
+	</head>
+	<body>
+		<header>
+			<div id="header-name">
+				<h1>Saskaitītājs</h1>
+				<p>Saskaita 2 naturālus skaitļus</p>
+			</div>
+		</header>
+		<main>
+			<!-- Saskaitītājs -->
+			<form onsubmit="aprekinat(); return false;">
+				<label for="quantity">Naturāls skaitlis A:</label>
+				<input type="number" id="num-a" min="1"><br>
+				<label for="quantity">Naturāls skaitlis B:</label>
+				<input type="number" id="num-b" min="1"><br>
+				<input type="submit" value="Aprēķināt">
+			</form>
+			<p>Rezultāts: <span id ="rezultats"></span></p>
+		</main>
+		<footer>
+			<nav>
+				<ul>
+					<li><a href="..">Rīku saraksts</a></li>
+					<li><a href="https://github.com/rtk2023/riki">Github</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</body>
+</html>
