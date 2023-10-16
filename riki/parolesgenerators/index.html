@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Paroles ģenerators</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="container">
+    <!--Header-->
+    <h2>Paroles ģenerators</h2>
+    <h3>Rīks paroles ģenerēšanai, pēc lietotāja ievadītiem parametriem</h3>
+    <!--Body-->
+    <div class="checkbox-group">
+      <label>
+        <input checked type="checkbox" onclick="toggleElement(this, 'userInputNums')"> Iekļaut skaitļus
+      </label>
+      <label>
+        <input checked type="checkbox" onclick="toggleElement(this, 'userInputWords')"> Iekļaut vārdus
+      </label>
+      <label>
+        <input checked type="checkbox" onclick="toggleElement(this, 'userInputSymbols')"> Iekļaut simbolus
+      </label>
+      <label>
+        <input checked type="checkbox" id="userInputCaps"> Iekļaut lielos burtus
+      </label>
+    </div>
+
+    <input id="userInputPassLen" type="number" min="1" value="1" onkeypress="return checkNumber(event)"
+      placeholder="Paroles garums">
+    <input id="userInputNums" type="text" onkeypress="return checkNumber(event)"
+      placeholder="Skaitļi (123,442,23232,...)">
+    <input id="userInputWords" type="text" onkeypress="return checkChar(event)"
+      placeholder="Vārdi (ābols,lapa,dators,...)">
+    <input id="userInputSymbols" type="text" onkeypress="return checkSymbol(event)"
+      placeholder="Simboli: (&,#,!,@$@,$*,...)">
+
+    <div id="passwordStrength">Paroles stiprums: <span id="passwordStrengthText"></span></div>
+
+    <button type="button" onclick="generatePassword()">Ģenerēt paroli</button>
+
+    <button type="button" onclick="copyToClipboard()">Kopēt paroli</button>
+
+    <!--Footer-->
+    <div class="checkbox-group">
+      <a href="../index.html">Citi rīki</a>
+      &nbsp; <!--TODO: Atrast citu veidu kā pievienot atstarpi-->
+      <a href="https://github.com/rtk2023/riki"><img
+          src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="Github Repo IMG"
+          style="width: 80px;height: 20px"></a>
+    </div>
+  </div>
+  <script src="script.js" defer></script>
+</body>
+
+</html>
