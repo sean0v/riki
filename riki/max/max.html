@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="lv">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mēneša maksājumu kalkulators</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Mēneša maksājumu kalkulators</h1>
+            <label for="loanAmount">Aizdevuma summa (€):</label>
+            <input type="number" id="loanAmount" placeholder="Ievadiet aizdevuma summu">
+
+            <label for="interestRate">Gada procentu likme (%):</label>
+            <input type="number" id="interestRate" placeholder="Ievadiet gada procentu likmi">
+
+            <label for="loanTerm">Aizdevuma termiņš (mēneši):</label>
+            <input type="number" id="loanTerm" placeholder="Ievadiet aizdevuma termiņu mēnešos">
+
+            <label for="firstPayment">Pirmā maksājuma iespēja (€):</label>
+            <input type="number" id="firstPayment" placeholder="Ievadiet pirmā maksājuma summu, ja ir">
+
+            <button onclick="calculateMonthlyPayment()">Aprēķināt</button>
+
+            <p id="monthlyPayment">Mēneša maksājums: €0.00</p>
+        </div>
+
+    </body>
+</html>
