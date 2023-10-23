@@ -1,0 +1,29 @@
+body{
+    height: 95vh;
+    background-color: rgb(79, 79, 79) !important;
+}
+
+h1{
+    text-align: center;
+    padding: 1%;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.container{
+    background-color: rgb(255, 255, 255);
+    
+    margin-top: 5vh;
+    height: 90vh;
+
+    border-radius: 1%;
+}
+
+.modal{
+    display: block !important;
+
+}
+
+form{
+    padding: 5%;
+    border-bottom: 1px solid #dee2e6;
+}

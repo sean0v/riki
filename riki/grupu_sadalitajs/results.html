@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Grupu sadalītājs</title>
+
+    <!--  Stylesheets  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/results.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Grupu sadalītājs</h1>
+
+        <form method="get" name="form" onsubmit="return false">
+            <div class="form-group">
+                <label for="formId">Formas id:</label>
+                <input type="text" class="form-control" id="formId" name="formId" aria-describedby="formIdHelp" placeholder="Ievadi formas ID" required>
+                <small id="formIdHelp" class="form-text text-muted">Formas id var iegūt - https://docs.google.com/forms/d/{formas_id}/edit</small>
+            </div>
+            <div class="form-group">
+                <label for="groupAmount">Grupu skaits:</label>
+                <input type="number" class="form-control" id="groupAmount" name="groupAmount" placeholder="Ievadi grupu daudzumu" min="2" required>
+            </div>
+            <button type="submit" class="btn btn-primary" name="submit">Ģenerēt grupas</button>
+        </form>
+    
+        <!--  Results of stable-matching  -->
+        <div id="table-container"></div>
+
+        <footer class="text-center text-white">
+            <div class="text-center text-dark p-3">
+                Grupu sadalītājs ->
+                <a class="text-dark" href="../index.html">Atpakaļ uz rīkiem</a>
+            </div>
+        </footer>
+    </div>
+    
+
+    <!--  Scripts  -->
+    <script src="js/script.js" type="module"></script>
+</body>
+</html>
