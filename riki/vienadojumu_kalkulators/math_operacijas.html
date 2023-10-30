@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Vietne risina lineāros un kvadrātvienādojumus">
+    <title>Matemātiskās operācijas</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Pieslēdzam ārējo CSS stilu failu -->
+    <script src="scripts.js"></script> <!-- Pieslēdzam ārējo JavaScript failu -->
+</head>
+<body>
+    <header>
+        <h1>Matemātiskās operācijas</h1>
+        <p>Vietne risina lineāros un kvadrātvienādojumus.</p> <!-- Teksts galvenes jomā -->
+    </header>
+    
+        <div id="linear-calculator">
+            <h2>Linēāro vienādojumu kalkulators</h2>
+            <p>Risināt vienādojumu ax + b = 0</p> <!-- Teksts apraksta funkciju -->
+            <input type="text" id="linear_a" placeholder="Ievadiet vērtību a">
+            <input type="text" id="linear_b" placeholder="Ievadiet vērtību b">
+            <button onclick="solveLinearEquation()">Aprēķināt</button> <!-- Poga, kas izsauc funkciju -->
+            <p id="linear_result"></p> <!-- Vieta rezultāta izvadei -->
+        </div>
+    
+        <div id="quadratic-calculator">
+            <h2>Kvadrātvienādojumu kalkulators</h2>
+            <p>Risināt vienādojumu ax^2 + bx + c = 0</p> <!-- Teksts apraksta funkciju -->
+            <input type="text" id="quadratic_a" placeholder="Ievadiet vērtību a">
+            <input type="text" id="quadratic_b" placeholder="Ievadiet vērtību b">
+            <input type="text" id="quadratic_c" placeholder="Ievadiet vērtību c">
+            <button onclick="solveQuadraticEquation()">Aprēķināt</button> <!-- Poga, kas izsauc funkciju -->
+            <p id="quadratic_result"></p> <!-- Vieta rezultāta izvadei -->
+        </div>
+    
+    <footer>
+        <a href="riki/index.html">Rīku saraksts</a> <!-- Saite uz rīku sarakstu -->
+        <a href="https://github.com/mykrop/college-project">Github</a> <!-- Saite uz GitHub projektu -->
+    </footer>
+</body>
+</html>
