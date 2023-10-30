@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
+body, p, a, button {
+    color: white;
+}
+
+.main-container {
+    position: relative;
+    height: 100%;
+}
+
+header {
+    height: 8vh;
+    background-color: rgb(92, 85, 87);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.logo {
+    float: left;
+    margin: 0 20px;
+}
+
+
+.bckg {
+    display: flex;
+    height: calc(100% - 8vh); /* Adjust for header height */
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.bckg img {
+    filter: brightness(5%);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.container {
+    position: absolute;
+    top: 8vh; /* Adjust for header height */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3; /* Place the container in front of header and background */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.right h2{
+    color: white;
+}
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left img {
+    margin-right: 10px; /* Add some spacing between the images */
+}
+
+.moto {
+    flex: 1; /* Allow the "moto" to expand and take remaining space */
+    text-align: center;
+}
+
+/* CSS for customizing the button */
+button {
+    background-color: #FF5722; /* Change the background color */
+    color: white; /* Change the text color */
+    padding: 10px 20px; /* Add padding to the button */
+    border: none; /* Remove the border */
+    cursor: pointer;
+    font-size: 18px; /* Customize the font size */
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #E64A19; /* Change the background color on hover */
+}
+
+.kreisa-mala {
+    float: left;
+    width: 1100px;
+    height: 400px;
+    padding: 20px;
+    background-color: #f2f2f206;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 20px;
+    display: flex;
+}
+
+.laba-mala {
+    /* Remove float and width properties to let it inherit the parent's width */
+    width: 20%;
+    height: 400px;
+    padding: 20px;
+    background-color: #f2f2f206;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* You can keep or adjust margin as needed */
+    display: flex;
+}
+
+.viss{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+
+#imp, #imp1, #imp2, #imp3, #imp4, #imp5 {
+    color: #E64A19;
+}
+
+footer{
+    height: 8vh;
+    background-color: rgb(92, 85, 87);
+    display: flex;
+}
+
+footer p{
+    float: center;
+    width: 300px;
+    display: flex;
+}
+
+footer a{
+    float: center;
+    display: flex;
+    color:#E64A19;
+    width: 140px;
+}

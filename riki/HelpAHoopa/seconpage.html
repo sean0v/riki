@@ -1,0 +1,202 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="HelpAHoopa.css">
+        <title>Calculate</title>
+    </head>
+    <body>
+        <div class="main-container">
+            <header>
+                <div class="logo">
+                    <img src="https://i.ibb.co/JK0sKTB/basketball-logo.jpg" width="70" alt="logo">
+                </div>
+            </header>
+            <div class="bckg">
+                <img src="https://i.ibb.co/HY2pzMT/court.jpg" alt="fons">
+            </div>
+            <div class="viss">
+                <div class="kreisa-mala">
+                    <div class="ievade">
+                        <div class="height">
+
+                            <p>Ievadi savu augumu (Metri|Centimetri)</p>
+
+                            <div class="metri">
+                                <input type="number" id="HM" style="display: inline-block;">
+                                <p style="display: inline;">m</p>
+                            </div>
+
+                            <div class="centimetri">
+                                <input type="number" id="HCM" style="display: inline-block;">
+                                <p style="display: inline;">cm</p>
+                            </div>
+
+                        </div>
+                        <div class="reach">
+
+                            <p>Ievadi savu stāvošas iztieptas rokas augstumu(Standing reach), (Metri|Centimetri)</p>
+
+                            <div class="metri">
+                                <input type="number" id="SRM" style="display: inline;">
+                                <p style="display: inline;">m</p>
+                            </div>
+
+                            <div class="centimetri">
+                                <input type="number" id="SRCM" style="display: inline;">
+                                <p style="display: inline;">cm</p>
+                                
+                                <p> </p>
+                                <a href="javascript:void(0);" onclick="SRReachApr()" style="color:#E64A19;">Nezinu savu stāvošas iztieptas rokas augstumu(Standing reach)</a>
+                            </div>
+
+                        </div>
+                        <button onclick="GalvenaisAprekins()">Aprēķināt</button>
+                    </div>
+                    <div class="izvade">
+                        <p id="imp"><p id="fiiit"></p></p>
+                        <p id="imp1"><p id="fiiitsr"> </p>
+                        <p id="imp2"><p id="pos"> </p>
+                        <p id="imp3"><p id="rim"></p>
+                        <p id="imp4"><p id="dunk"> </p>
+                        <p id="imp5"><p id="skill"> </p>
+
+                    </div>
+                </div>
+                <div class="laba-mala">
+                    <div class="konverters">
+                        <p>Pēdu un collu pārveidotājs</p>
+                        <div class="ievade">
+                            <div class="fiit">
+                                <input id="konFeet" type="text" style="display: inline;">
+                                <p style="display: inline;">Pēdas(feet)</p>
+                            </div>
+                            <div class="inchez">
+                                <input id="konInch" type="text" style="display: inline;">
+                                <p style="display: inline;">Collas(In)</p>
+                            </div>
+                            <button onclick="convert()">Aprēķināt</button>
+                        </div>
+                        <div class="izvade">
+                            <p id="konApr"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function convert(){
+                const InputFt = document.getElementById("konFeet");
+                const InputIn = document.getElementById("konInch");
+                const Ft = parseInt(InputFt.value);
+                const In = parseInt(InputIn.value);
+                const Inc = In + Ft * 12;
+                const sum = Inc * 2.54;
+                var output = document.getElementById("konApr");
+                output.innerHTML = "Tavs augums centimetros ir: " + sum.toString();
+            }
+            
+            function SRReachApr(){
+                const Metri = document.getElementById("HM");
+                const Centimetri = document.getElementById("HCM");
+                const SRMetri = document.getElementById("SRM");
+                const SRCentimetri = document.getElementById("SRCM");
+                const M = parseFloat(Metri.value);
+                const CM = parseFloat(Centimetri.value);
+                const MCM = CM + M * 100;
+                const sum = MCM * 1.335;
+                const sumM = Math.floor(sum / 100);
+                const sumCM = Math.round(sum - sumM * 100);
+                SRMetri.value = sumM;
+                SRCentimetri.value = sumCM;
+            }
+    
+            function GalvenaisAprekins(){
+                const Metri = document.getElementById("HM");
+                const AA = document.getElementById("imp");
+                const BB = document.getElementById("imp1");
+                const CC = document.getElementById("imp2");
+                const DD = document.getElementById("imp3");
+                const HH = document.getElementById("imp4");
+                const GG = document.getElementById("imp5");
+                const Centimetri = document.getElementById("HCM");
+                const SRMetri = document.getElementById("SRM");
+                const SRCentimetri = document.getElementById("SRCM");
+                var feet = document.getElementById("fiiit");
+                var feetsr = document.getElementById("fiiitsr");
+                var pos = document.getElementById("pos");
+                var rim = document.getElementById("rim");
+                var dunk = document.getElementById("dunk");
+                var skill = document.getElementById("skill");
+    
+                const M = parseFloat(Metri.value);
+                const CM = parseFloat(Centimetri.value);
+                const SRM = parseFloat(SRMetri.value);
+                const SRCM = parseFloat(SRCentimetri.value);
+                const sum = CM + M * 100;
+                const SRsum = SRCM + SRM * 100;
+                const sumFt = Math.floor((sum/2.54)/12);
+                const sumSRFt = Math.floor((SRsum/2.54)/12);
+    
+                AA.innerText = "Tavs augums Ft'In: ";
+                feet.innerHTML = sumFt + "'" + Math.round((sum/2.54) - (12 * sumFt));
+                BB.innerText = "Tavs stāvoš rokas izstiepuma garums Ft'In: ";
+                feetsr.innerHTML = sumSRFt + "'" + Math.round((SRsum/2.54) - (12 * sumSRFt));
+    
+                if(sum <= 170){
+                    CC.innerText = "Pozīcija: ";
+                    pos.innerText = "Centrs midžetu basketbola komandā";
+                }else if(sum <= 190){
+                    CC.innerText = "Pozīcija: ";
+                    pos.innerText = "Saspēles vadītājs(Point Guard)";
+                }else if(sum <= 198){
+                    CC.innerText = "Pozīcija: ";
+                    pos.innerText = "Uzbrūkošais aizsargs(Shooting Guard)";
+                }else if(sum <= 203){
+                    CC.innerText = "Pozīcija: ";
+                    pos.innerText = "Vieglais uzbrucējs(Small Forward)";
+                }else if(sum <= 208){
+                    CC.innerText = "Pozīcija: ";
+                    pos.innerText = "Spēka uzbrucējs(Power Forward)";
+                }else if(sum > 208){
+                    CC.innerText = "Pozīcija: ";
+                    pos.innerText = "Centrs(Center)";
+                }
+    
+                DD.innerText = "Lai aizsniegtu stīpu, ";
+                rim.innerHTML = "jums nepieciešams " + (305 - SRsum) + "cm augsts lēciens";
+                HH.innerText = "Lai ieliktu bumbu no augšas, ";
+                dunk.innerHTML = "jums nepieciešams " + (320 - SRsum) + "cm augsts lēciens";
+    
+                skillTip(sum);
+                
+            }
+    
+            function skillTip(sum){
+                if(sum <= 170){
+                    skill.innerText = "Kas tev jāapgūst, lai kļutu nozīmīgāks basketbolā: Izaudz";
+                }else if(sum <= 190){
+                    skill.innerText = "Bumbas vadīšana: Kļūt par komandas vadītāju, uzlabojot bumbas vadīšanas prasmes un izpratni par spēles dinamiku. Komandas darbs: Mācīties efektīvi sadarboties ar citiem spēlētājiem un pielāgoties situācijai. Aizsardzība: Palielināt aizsardzības spējas un spēju nozagt bumbu no pretiniekiem. Metieni: Uzlabot precizitāti metienos un padot bumbu citiem spēlētājiem pareizajā brīdī.";
+                }else if(sum <= 198){
+                    skill.innerText = "Metienu precizitāte: Uzlabot precizitāti tā, lai būtu spējīgs iemest trīspunktveida metienus un trāpīt no attāluma. Bumbas apstrāde: Palielināt spējas bumbas apstrādē un padot bumbu citiem spēlētājiem. Ātrums un izturība: Palielināt fizisko izturību un ātrumu, lai spētu viegli pārvietoties pa laukumu un izvairīties no aizsargiem. Aizsargājošās spējas: Uzlabot aizsargājošās prasmes un spējas, lai novērstu pretinieka šūšanas mēģinājumus.";
+                }else if(sum <= 203){
+                    skill.innerText = "Vispusīgums: Uzlabot gan uzbrukuma, gan aizsardzības spējas, lai būtu gan labs uzbrukumā, gan aizsardzībā. Fiziskums: Iemācīties kā izmantot savu fizisko izmēru, lai uzvarētu vājākus pretiniekus un iegūtu vairāk atlēkošās bumbas. Komandas darbs: Uzlabot komandas spēles spējas, piemēram, izvēlēties pareizo momentu, lai bumbu nodotu citam spēlētājam. Trīspunktveida metieni: Pilnveidot trīspunktveida metienus, lai būtu precīzs no attāluma.";
+                }else if(sum <= 208){
+                    skill.innerText = "Fiziskums: Uzlabot fiziskās spējas un cīņas par atlēkošajām bumbām. Ātrums un mobilitāte: Pilnveidot fizisko sagatavotību, lai varētu veikt lēcienus un pārvietoties uzbrukumā un aizsardzībā. Mešana no attāluma: Palielināt metienu precizitāti no vidējas distances. Aizsargājošās prasmes: Uzlabot aizsargājošās spējas un bloķēšanas prasmes.";
+                }else if(sum > 208){
+                    skill.innerText = "Fiziskums: Kļūt par fizisku speciālistu, lai iegūtu vairāk atlēkošās bumbas un nodotu bumbu uzbrucējiem. Bloķēšana un aizsardzība: Uzlabot aizsardzības prasmes, lai būtu spējīgs bloķēt metienus un aizsargāt grozu. Komandas darbs: Mācīties darboties ar pārējiem spēlētājiem, lai izveidotu efektīvu izpildi. Fiziskā izturība: Paaugstināt fizisko izturību un spējas noturēties aizsardzības pozīcijas.";
+                }
+            }
+        </script>
+
+    </body>
+    <footer>
+        <p>
+            © 2023 Ermīns Novickis, Ralfs Putraims |
+        </p>
+        <a href="https://github.com/RalfsPutraims/HelpAHoopauzd">HelpAHoopa Github</a>
+        <a href="https://github.com/ermiiins/riki/tree/main/riki">Riki Github</a>
+    </footer>
+</html>
