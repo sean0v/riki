@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="lv">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Budžets</title>
+			  <!-- Vizuālā tēma -->
+			  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+			  <!-- jQuery-->
+			  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			  <!-- jQuery UI -->
+			  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+			  <link rel="stylesheet" href="style.css">
+			  <script type="text/javascript" src="main.js"></script>
+	</head>
+	<body>
+		<header>
+			<div id="header-name">
+				<h1>Budžets</h1>
+				<p>Rīks saskaita ieņēmumus un izdevumus laika posmā un attēlo prognozēto rezultātu posma beigās</p>
+			</div>
+		</header>
+		<content>
+
+<button id="openDialog" class="ui-button ui-corner-all ui-widget"><span class="ui-icon ui-icon-plus"></span>Pievienot</button>
+<button class="ui-button ui-corner-all ui-widget" onclick="sumTotal()"><span class="ui-icon ui-icon-play"></span>Aprēķināt!</button>
+
+<div id="dialog" title="Pievienot ierakstu" style="display:none;">
+  <form>
+    <label for="text">Nosaukums:</label><br/>
+    <input type="text" id="text" name="text"><br>
+    <label for="value">Vērtība:</label><br/>
+    <input type="text" id="value" name="value"><br>
+  </form>
+</div>
+
+<div id="dialog-input" title="Nederīga vērtība" style="display:none;">
+  <p>
+    <span class="ui-icon ui-icon-notice" style="float:left; margin:0 7px 50px 0;"></span>
+    Vērtībai ir jābūt skaitlim
+  </p>
+</div>
+
+
+<div id="dialog-result" title="Rezultāts" style="display:none;">
+<div class="ui-widget">
+	<div id="nokResult" class="ui-state-error ui-corner-all" style="padding: 0 .7em;" style="display:none;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>Perioda beigas:</strong> <div id="result1"></div></p>
+	</div>
+	<div id="okResult" class="ui-state-default ui-corner-all" style="padding: 0 .7em;" style="display:none;">
+		<p>
+		<strong>Perioda beigas:</strong> <div id="result2"></div></p>
+	</div>
+</div>
+</div>
+
+<br/><br/><br/>
+      <table id="itemTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nosaukums</th>
+                <th>Vērtība</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+		</content>
+		<br/><br/><br/>
+		<footer>
+		Elizabete Staškuna
+		</footer>
+	</body>
+</html>
