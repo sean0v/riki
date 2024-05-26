@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+body,html{
+    background-color: #333;
+}
+
+.calculator {
+    width: 100%; /* Stretch the whole width */
+    background-color: #333;
+    display: grid;
+    grid-template-rows: auto 1fr; /* Place input on top */
+    grid-gap: 5px;
+    justify-content: center;
+}
+
+#display {
+    height: 100px;
+    width: auto;
+    text-align: right;
+    padding: 0 2rem;
+    font-size: 2.5em;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px 5px 0 0;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+
+button {
+    height: 80px;
+    font-size: 2em;
+    border: none;
+    background-color: #777;
+    color: #fff;
+    cursor: pointer;
+}
+.text{
+    color: white;
+    font-size: 18px;
+}
+.text a{
+    color: rgb(174, 239, 255);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #7777777a;
+}
+
+.number {
+    background-color: #333;
+}
+
+.operator, .function, .equal {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+.operator:hover, .function:hover, .equal:hover {
+    background-color: #ff6600a9;
+    color: #fff;
+}
+
+.equal {
+    border-radius: 0 0 5px 5px;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 730px) {
+    button {
+        height: 100px; /* Adjust button height */
+        font-size: 1.5em; /* Adjust font size */
+    }
+    #display {
+        height: 150px;
+    }
+    .calculator{
+        justify-content: unset;
+    }
+}

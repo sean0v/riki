@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Kalukaltors</title>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button class="function" onclick="calculateAdvanced('sin')">sin</button>
+            <button class="function" onclick="calculateAdvanced('cos')">cos</button>
+            <button class="function" onclick="calculateAdvanced('tan')">tan</button>
+            <div></div>
+
+            <button class="function" onclick="clearDisplay()">C</button>
+            <button class="function" onclick="calculateAdvanced('log')">log</button>
+            <button class="function" onclick="calculateAdvanced('sqrt')">√</button>
+            <div></div>
+
+            <button class="number" onclick="appendToDisplay('7')">7</button>
+            <button class="number" onclick="appendToDisplay('8')">8</button>
+            <button class="number" onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+
+            <button class="number" onclick="appendToDisplay('4')">4</button>
+            <button class="number" onclick="appendToDisplay('5')">5</button>
+            <button class="number" onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+
+            <button class="number" onclick="appendToDisplay('1')">1</button>
+            <button class="number" onclick="appendToDisplay('2')">2</button>
+            <button class="number" onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+            
+            <button class="number" onclick="appendToDisplay('.')">.</button>
+            <button class="number" onclick="appendToDisplay('0')">0</button>
+            <button class="number" onclick="calculate(document.getElementById('display').value)">=</button>
+
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+<footer>
+    <div class="text">GIthub Links: <a href="https://github.com/rtk2023/riki">Github</a> </div>
+    <div class="text"> <a href="..">Rīku saraksts</a> </div>
+</footer>
+</html>
