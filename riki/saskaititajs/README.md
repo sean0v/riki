@@ -7,8 +7,11 @@
 * Paslēpt bultiņas ievadlodziņā
 * Atļaut negatīvu skaitļu ievadīšanu
 
-### Kļūdas
+### Problēmas
 
-## Veidots
+* Nav zināmu problēmu
 
-* 2023
+## Autori
+
+* 2023: Autors A, Autors2 PX-Y
+* 2024: Autors B PX-Y

@@ -1,3 +1,6 @@
+> **Warning**  
+> Spēles veidot nav atļauts. Šī spēle atstāta kā piemērs tam, ko nedarīt.
+
 # Flappy bird
 - Spēle kurā jaizvairās no zaļajām caurulēm spiežot "space bar".
 
