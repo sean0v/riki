@@ -8,8 +8,9 @@ riki
 │   └── style.css
 ├── index.html (rīku saraksts)
 ├── README.md (šis fails)
-└── saskaititajs (piemērs)
-	├── main.js
+└── Task_planner (mūsu darbs)
+	├── script.js
 	├── README.md
-	└── saskaititajs.html
+	├── style.css
+	└── index.html
 ```
