@@ -23,7 +23,7 @@ Task Planner ir tīmekļa lietojumprogramma uzdevumu pārvaldībai. Tā ļauj iz
 - [Bootstrap 5.3.3](https://getbootstrap.com/)
 - [Icons8](https://icons8.com/) zvaigžņu ikonām.
 
-## Author
+## Authors
 
 - Rustams - [seanov](https://github.com/sean0v)
 - Maksims - [mandarinka1034](https://github.com/mandarinka1034)
